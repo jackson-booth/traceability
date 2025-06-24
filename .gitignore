@@ -1,0 +1,16 @@
+# Python artifacts
+__pycache__/
+dist/
+build/
+
+# Virtual environments
+venv/
+.env
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+*.pid
