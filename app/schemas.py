@@ -5,7 +5,12 @@ import uuid
 from app.models import EventType
 
 
-class EventCreate(BaseModel):
+class BaseSchema(BaseModel):
+    class Config:
+        from_attributes = True
+
+
+class EventCreate(BaseSchema):
     part_serial: str
     event_type: EventType
     station_id: Optional[str]
@@ -18,6 +23,12 @@ class EventRead(EventCreate):
     id: uuid.UUID
     created_at: datetime
 
-class PartEventsRead(BaseModel):
+
+class PartEventsRead(BaseSchema):
+    part_serial: str
+    events: List[EventRead]
+
+
+class PartWithEvents(BaseSchema):
     part_serial: str
     events: List[EventRead]

@@ -1,3 +1,8 @@
 {
-  "editor.defaultFormatter": "ms-python.black-formatter"
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.formatOnSave": true,
+  "python.languageServer": "Pylance",
+  "python.analysis.autoImportCompletions": true,
+  "editor.tabCompletion": "on",
+  "editor.suggestSelection": "first"
 }
