@@ -6,14 +6,16 @@ import uuid
 
 from app.database import Base
 
+
 class EventType(str, enum.Enum):
-  part_created = "part_created"
-  inspection_passed = "inspection_passed"
-  inspection_failed = "inspection_failed"
-  rework_done = "rework_done"
-  part_moved = "part_moved"
-  defect_found = "defect_found"
-  shipped = "shipped"
+    part_created = "part_created"
+    inspection_passed = "inspection_passed"
+    inspection_failed = "inspection_failed"
+    rework_done = "rework_done"
+    part_moved = "part_moved"
+    defect_found = "defect_found"
+    shipped = "shipped"
+
 
 class Event(Base):
     __tablename__ = "events"
