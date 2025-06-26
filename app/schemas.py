@@ -1,5 +1,5 @@
-from pydantic import BaseModel, Field
-from typing import Literal, Optional, List
+from pydantic import BaseModel
+from typing import Any, Optional, List
 from datetime import datetime
 import uuid
 from app.models import EventType
@@ -16,7 +16,7 @@ class EventCreate(BaseSchema):
     station_id: Optional[str]
     timestamp: datetime
     user_id: Optional[str]
-    payload: dict
+    payload: dict[str, Any]
 
 
 class EventRead(EventCreate):
@@ -32,3 +32,12 @@ class PartEventsRead(BaseSchema):
 class PartWithEvents(BaseSchema):
     part_serial: str
     events: List[EventRead]
+
+
+class EventSearch(BaseSchema):
+    part_serial: Optional[str] = None
+    event_type: Optional[EventType] = None
+    station_id: Optional[str] = None
+    user_id: Optional[str] = None
+    start_timestamp: Optional[datetime] = None
+    end_timestamp: Optional[datetime] = None

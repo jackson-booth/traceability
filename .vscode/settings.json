@@ -4,5 +4,6 @@
   "python.languageServer": "Pylance",
   "python.analysis.autoImportCompletions": true,
   "editor.tabCompletion": "on",
-  "editor.suggestSelection": "first"
+  "editor.suggestSelection": "first",
+  "python.analysis.typeCheckingMode": "strict" 
 }
